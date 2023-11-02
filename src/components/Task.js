@@ -16,19 +16,19 @@ function Task({index, tasks, setTasks, taskText, setShowCongrats }) {
     }
 
   return (
-    <div className='px-8 py-4 text-white bg-sky-700 space-y-4 border-b-2 border-black'>
+    <div className='px-8 py-2 text-white bg-sky-700 space-y-4 border-b-2 border-black'>
         <div className='flex justify-between'>
-            <div className='flex text-3xl'>
+            <div className='flex text-2xl'>
                 <div className='mr-2'>{index+1}.</div>
                 <div>{taskText}</div>
             </div>
             <div className=''>
-                <DeleteIcon fontSize='large' sx={{cursor: 'pointer'}} onClick={handleDelete} />
+                <DeleteIcon fontSize='medium' sx={{cursor: 'pointer'}} onClick={handleDelete} />
             </div>
         </div>
-        <div className='flex justify-end space-x-4 text-xl'>
-            <div className='mr-2'>{hour}:
-                {minute.toString().length < 2 ? '0'+minute : minute}</div> {hour >=12 ? 'pm': 'am'}
+        <div className='flex justify-end space-x-4 text-sm'>
+            <div className='mr-1'>{hour}:
+                {minute.toString().length < 2 ? '0'+minute : minute}</div> {hour >=12 ? 'PM': 'AM'}
             <div>{year}/{month+1}/{day}</div>
         </div>
     </div>

@@ -8,8 +8,8 @@ function Motivation() {
 
   return (
     <div className='mx-8 my-4 p-2 bg-white border-2 border-black'>
-         <div className='text-2xl font-semibold'>{quote}</div>
-         <div className='text-2xl italic'>{author}</div>
+         <div className='text-xl font-semibold'>{quote}</div>
+         <div className='text-xl italic'>{author}</div>
     </div>
   )
 }

@@ -32,9 +32,9 @@ function App() {
       </div>
       {/* Show Congrats Message if User has Completed all their todos */}
       { showCongrats && 
-          <div className="text-4xl p-8 bg-sky-700 text-white text-center">
+          <div className="text-2xl p-8 bg-sky-700 text-white text-center">
             <div className="font-bold text-green-400">CONGRATULATIONS!</div> 
-            <div className="text-2xl pt-2">You have completed all your Todos.</div>
+            <div className="text-xl pt-2">You have completed all your Todos.</div>
           </div>
       }
     </div>
