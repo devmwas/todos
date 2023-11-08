@@ -36,6 +36,7 @@ function AddTask({setTasks, setShowCongrats}) {
                     helperText="Enter a valid todo item"
                     label='Task' 
                     onChange={handleChange} 
+                    sx={{width: '100%'}}
                     value={taskText} />
                 {/* <Button type="submit" variant='contained' onClick={addTask}>
                     ADD TASK
