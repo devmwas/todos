@@ -10,7 +10,8 @@ function AddTask({setTasks, setShowCongrats}) {
         setError(false)
     }
 
-    const addTask = () => {
+    const addTask = e => {
+        e.preventDefault()
         if(taskText != '') {
             setShowCongrats(false)
             setTasks(prevTasks => {
@@ -28,22 +29,30 @@ function AddTask({setTasks, setShowCongrats}) {
   return (
     <div className='flex flex-col bg-white my-4 space-y-2 px-8'>
         { error ?
-            <TextField 
+            <form onSubmit={addTask}>
+                <TextField 
                     variant='outlined' 
                     error
                     helperText="Enter a valid todo item"
                     label='Task' 
                     onChange={handleChange} 
-                    value={taskText} /> :
-            <TextField
+                    value={taskText} />
+                {/* <Button type="submit" variant='contained' onClick={addTask}>
+                    ADD TASK
+                </Button> */}
+            </form> :
+            <form onSubmit={addTask} className='w-full'>
+                <TextField
                     variant='outlined' 
                     label='Task' 
                     onChange={handleChange} 
+                    sx={{width: '100%'}}
                     value={taskText} />
+            </form>
             }
-        <Button variant='contained' onClick={addTask}>
-            ADD TASK
-        </Button>
+            <Button type="" variant='contained' onClick={addTask}>
+                ADD TASK
+            </Button>
     </div>
   )
 }
