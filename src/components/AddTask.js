@@ -42,7 +42,7 @@ function AddTask({setTasks, setShowCongrats}) {
                     ADD TASK
                 </Button> */}
             </form> :
-            <form onSubmit={addTask} className='w-full'>
+            <form onSubmit={addTask}>
                 <TextField
                     variant='outlined' 
                     label='Task' 
