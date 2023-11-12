@@ -38,9 +38,6 @@ function AddTask({setTasks, setShowCongrats}) {
                     onChange={handleChange} 
                     sx={{width: '100%'}}
                     value={taskText} />
-                {/* <Button type="submit" variant='contained' onClick={addTask}>
-                    ADD TASK
-                </Button> */}
             </form> :
             <form onSubmit={addTask}>
                 <TextField
