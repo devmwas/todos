@@ -3,7 +3,7 @@ import React from "react";
 
 function ClearAll({ setTasks, setShowCongrats }) {
   return (
-    <div className="mx-8 mb-4">
+    <div className="mx-8 mb-1 mt-4">
       <Button
         variant="contained"
         color="primary"

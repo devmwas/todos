@@ -3,30 +3,32 @@ import AddTask from "./components/AddTask";
 import Header from "./components/Header";
 import Motivation from "./components/Motivation";
 import Task from "./components/Task";
-import "@fontsource/roboto/300.css";
-import "@fontsource/roboto/400.css";
-import "@fontsource/roboto/500.css";
-import "@fontsource/roboto/700.css";
 import ClearAll from "./components/ClearAll";
+import Congratulations from "./components/Congratulations";
 
 function App() {
   const [tasks, setTasks] = useState([]);
   const [showCongrats, setShowCongrats] = useState(false);
 
   return (
-    <div className="flex flex-col md:w-1/2 mx-auto">
-      <Header tasks={tasks} />
-      <Motivation />
-      {/* Tasks To Do */}
-      <AddTask
-        tasks={tasks}
-        setTasks={setTasks}
-        setShowCongrats={setShowCongrats}
-      />
-      {tasks.length > 1 && (
-        <ClearAll setTasks={setTasks} setShowCongrats={setShowCongrats} />
-      )}
+    <div className="flex flex-col md:w-2/3 lg:w-1/2 mx-auto">
       <div className="space-y-0">
+        {/* Header */}
+        <Header tasks={tasks} />
+        {/* Upper Body */}
+        <div className="pt-6 ">
+          <Motivation />
+          {/* Tasks To Do */}
+          <AddTask
+            tasks={tasks}
+            setTasks={setTasks}
+            setShowCongrats={setShowCongrats}
+          />
+          {tasks.length > 1 && (
+            <ClearAll setTasks={setTasks} setShowCongrats={setShowCongrats} />
+          )}
+        </div>
+        {/* Lower Body */}
         {tasks.map((task, index) => {
           return (
             <Task
@@ -41,12 +43,8 @@ function App() {
         })}
       </div>
       {/* Show Congrats Message if User has Completed all their todos */}
-      {showCongrats && (
-        <div className="text-2xl p-8 bg-sky-700 text-white text-center">
-          <div className="font-bold text-green-400">CONGRATULATIONS!</div>
-          <div className="text-xl pt-2">You have completed all your Todos.</div>
-        </div>
-      )}
+      {/* Footer */}
+      {showCongrats && <Congratulations />}
     </div>
   );
 }
